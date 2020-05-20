@@ -1,0 +1,12 @@
+appId: iam-users-mfa-audit
+displayName: IAM Users MFA Audit
+description: Find all users who haven't enabled an multi factor authentication device
+handler: app.lambda_handler
+runtime: python3.8
+executionTimeoutInSecs: 10
+author: apps@faros.ai
+location: https://www.github.com/faros-ai/faros-apps/apps/iam-users-mfa-audit
+tags:
+  - iam
+  - aws
+  - security

@@ -1,0 +1,12 @@
+appId: ec2-stopped-ebs-volumes
+displayName: EBS Volumes Attached To Stopped Instances
+description: Find any EBS volumes that are attached to stopped EC2 instances
+handler: app.lambda_handler
+runtime: python3.8
+executionTimeoutInSecs: 10
+author: apps@faros.ai
+location: https://www.github.com/faros-ai/faros-apps/apps/ec2-stopped-ebs-volumes
+tags:
+  - ebs
+  - aws
+  - cost

@@ -1,0 +1,12 @@
+appId: iam-groups-with-all-action-policy
+displayName: IAM Groups With All Action Policy
+description: Find any IAM group with any policy which allows for all (*) actions
+handler: app.lambda_handler
+runtime: python3.8
+executionTimeoutInSecs: 10
+author: apps@faros.ai
+location: https://www.github.com/faros-ai/faros-apps/apps/iam-groups-with-all-action-policy
+tags:
+  - iam
+  - aws
+  - security

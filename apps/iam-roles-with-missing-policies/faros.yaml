@@ -1,0 +1,12 @@
+appId: iam-roles-with-missing-policies
+displayName: IAM Roles With Missing Policies
+description: Find roles which are missing the policy arns in the <parameter required_policy_arns> either directly or through a group
+handler: app.lambda_handler
+runtime: python3.8
+executionTimeoutInSecs: 10
+author: apps@faros.ai
+location: https://www.github.com/faros-ai/faros-apps/apps/iam-roles-with-missing-policies
+tags:
+  - iam
+  - aws
+  - security

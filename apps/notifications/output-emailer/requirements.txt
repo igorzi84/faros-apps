@@ -1,0 +1,2 @@
+graphqlclient==0.2.4
+jinja2==2.11.2

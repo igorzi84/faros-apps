@@ -1,0 +1,12 @@
+appId: iam-users-with-missing-policies
+displayName: IAM Users Policy Audit
+description: Find the users who are missing the required policy arns in the <parameter required_policy_arns> either directly or through a group
+handler: app.lambda_handler
+runtime: python3.8
+executionTimeoutInSecs: 10
+author: apps@faros.ai
+location: https://www.github.com/faros-ai/faros-apps/apps/iam-users-with-missing-policies
+tags:
+  - iam
+  - aws
+  - security

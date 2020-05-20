@@ -1,0 +1,13 @@
+appId: ec2-exposed-vpc-endpoints
+displayName: Exposed EC2 VPC Endpoints
+description: Identify all exposed VPC endpoints
+handler: app.lambda_handler
+runtime: python3.8
+executionTimeoutInSecs: 10
+author: apps@faros.ai
+location: https://www.github.com/faros-ai/faros-apps/apps/ec2-exposed-vpc-endpoints
+tags:
+  - aws
+  - ec2
+  - vpc
+  - security
