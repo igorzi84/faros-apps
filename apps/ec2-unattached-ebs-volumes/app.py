@@ -22,5 +22,8 @@ def lambda_handler(event, context):
 
     response = client.execute(query)
     response_json = json.loads(response)
-    volumes = response_json["data"]["ec2_volume"]["data"]
-    return [v for v in volumes if not v["attachments"]]
+    if (response_json["data"]):
+        volumes = response_json["data"]["ec2_volume"]["data"]
+        return [v for v in volumes if not v["attachments"]]
+    else:
+        return response_json["errors"]
