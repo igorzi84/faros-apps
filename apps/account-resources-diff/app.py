@@ -23,7 +23,7 @@ def diff_sorted_lists(list1, list2, key):
             diffs.append(colored("+ " + json.dumps(item2, indent=4, sort_keys=True), "green"))
             pointer2 += 1
         else:
-            diffs.append(json.dumps(item2, indent=4, sort_keys=True))
+            # diffs.append(json.dumps(item2, indent=4, sort_keys=True))
             pointer1 += 1
             pointer2 += 1
 
@@ -35,8 +35,8 @@ def lambda_handler(event, context):
 
     query = event["params"]["query"]
     key = event["params"]["key"]
-    account1 = event["params"]["accountId1"]
-    account2 = event["params"]["accountId2"]
+    ref_account_id = event["params"]["ref_account_id"]
+    new_account_id = event["params"]["new_account_id"]
 
     response = client.execute(query)
     response_json = json.loads(response)
@@ -44,7 +44,7 @@ def lambda_handler(event, context):
     object_name = next(iter(response_json["data"]))
     data = response_json["data"][object_name]["data"]
 
-    list1 = filter_list(data, key, account1)
-    list2 = filter_list(data, key, account2)
+    list1 = filter_list(data, key, ref_account_id)
+    list2 = filter_list(data, key, new_account_id)
 
     return diff_sorted_lists(list1, list2, key)
