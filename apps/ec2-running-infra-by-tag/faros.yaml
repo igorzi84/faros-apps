@@ -1,0 +1,12 @@
+appId: ec2-running-infra-by-tag
+displayName: ec2-running-infra-by-tag
+description: List instance type and ebs size of running instances by tag
+handler: app.lambda_handler
+runtime: python3.8
+executionTimeoutInSecs: 3
+author: igorzi84@gmail.com
+tags:
+  - tag1
+  - tag2
+  - tag3
+location: 'https://www.github.com/faros-ai/faros-apps/ec2-running-infra-by-tag'
