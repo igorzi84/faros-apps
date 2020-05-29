@@ -40,11 +40,11 @@ def lambda_handler(event, context):
             for t in i["tags"]:
                 if t["key"] == event["params"]["tag_name"] and t["value"] == event["params"]["tag_value"]:
                     infra.append(
-                        [{
+                        {
                             "instanceId": i["instanceId"],
                             "region": i["farosRegionId"],
                             "instanceType": i["instanceType"],
                             "volumes": i["volumes"]["data"]
-                        }]
+                        }
                     )
     return infra
