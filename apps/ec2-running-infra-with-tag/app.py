@@ -10,9 +10,10 @@ def lambda_handler(event, context):
     query = '''{
             ec2_instance {
               data {
+                farosAccountId
+                farosRegionId
                 instanceId
                 instanceType
-                farosRegionId
                 state {
                   name
                 }
@@ -41,8 +42,9 @@ def lambda_handler(event, context):
                 if t["key"] == event["params"]["tag_name"] and t["value"] == event["params"]["tag_value"]:
                     infra.append(
                         {
-                            "instanceId": i["instanceId"],
+                            "account": i["farosAccountId"],
                             "region": i["farosRegionId"],
+                            "instanceId": i["instanceId"],
                             "instanceType": i["instanceType"],
                             "volumes": i["volumes"]["data"]
                         }
